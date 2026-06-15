@@ -1,0 +1,10 @@
+flutter_native_splash:
+  color: "#FFFFFF"
+
+  image: assets/images/logo_lahza.png
+
+  android_12:
+    color: "#FFFFFF"
+    image: assets/images/logo_lahza.png
+
+  web: false
