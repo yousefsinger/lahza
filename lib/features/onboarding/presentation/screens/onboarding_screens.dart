@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:lahza/core/constants/app_assets.dart';
 import 'package:lahza/core/constants/app_routes.dart';
 import 'package:lahza/core/constants/app_strings.dart';
-import 'package:lahza/core/features/onboarding/presentation/widgets/onboarding_button.dart';
-import 'package:lahza/core/features/onboarding/presentation/widgets/onboarding_indicator.dart';
-import 'package:lahza/core/features/onboarding/presentation/widgets/onboarding_page.dart';
+import 'package:lahza/features/onboarding/presentation/widgets/onboarding_button.dart';
+import 'package:lahza/features/onboarding/presentation/widgets/onboarding_indicator.dart';
+import 'package:lahza/features/onboarding/presentation/widgets/onboarding_page.dart';
 
 class OnboardingScreen extends StatefulWidget {
   const OnboardingScreen({super.key});
@@ -49,7 +49,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
         curve: Curves.easeInOut,
       );
     } else {
-      Navigator.pushReplacementNamed(context, AppRoutes.login);
+      Navigator.pushReplacementNamed(context, AppRoutes.welcomeScreen);
     }
   }
 
@@ -71,24 +71,27 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
           child: Column(
             children: [
               Expanded(
-                child: PageView.builder(
-                  controller: pageController,
-                  itemCount: pages.length,
-                  onPageChanged: (index) {
-                    setState(() {
-                      currentIndex = index;
-                    });
-                  },
-                  itemBuilder: (context, index) {
-                    final page = pages[index];
+                child: Directionality(
+                  textDirection: TextDirection.ltr,
+                  child: PageView.builder(
+                    controller: pageController,
+                    itemCount: pages.length,
+                    onPageChanged: (index) {
+                      setState(() {
+                        currentIndex = index;
+                      });
+                    },
+                    itemBuilder: (context, index) {
+                      final page = pages[index];
 
-                    return OnboardingPage(
-                      image: page.image,
-                      title: page.title,
-                      description: page.description,
-                      onBack: currentIndex == 0 ? null : previousPage,
-                    );
-                  },
+                      return OnboardingPage(
+                        image: page.image,
+                        title: page.title,
+                        description: page.description,
+                        onBack: currentIndex == 0 ? null : previousPage,
+                      );
+                    },
+                  ),
                 ),
               ),
 

@@ -32,10 +32,20 @@ abstract class AppTextStyles {
     fontWeight: FontWeight.w500,
     color: AppColors.primary,
   );
+      static TextStyle get primary11400 => GoogleFonts.inter(
+    fontSize: _sp(11),
+    fontWeight: FontWeight.w400,
+    color: AppColors.primary,
+  );
 
   static TextStyle get primaryDark18600 => GoogleFonts.inter(
     fontSize: _sp(18),
     fontWeight: FontWeight.w600,
+    color: AppColors.primaryDark,
+  );
+    static TextStyle get primaryDark14500 => GoogleFonts.inter(
+    fontSize: _sp(14),
+    fontWeight: FontWeight.w500,
     color: AppColors.primaryDark,
   );
   static TextStyle get primaryDark14400 => GoogleFonts.inter(
@@ -56,6 +66,11 @@ abstract class AppTextStyles {
   static TextStyle get primary18500 => GoogleFonts.inter(
     fontSize: _sp(18),
     fontWeight: FontWeight.w500,
+    color: AppColors.primary,
+  );
+    static TextStyle get primary18600 => GoogleFonts.inter(
+    fontSize: _sp(18),
+    fontWeight: FontWeight.w600,
     color: AppColors.primary,
   );
   static TextStyle get primaryDark18500 => GoogleFonts.inter(
@@ -128,7 +143,7 @@ static TextStyle get primaryDark12400 => GoogleFonts.inter(
     color: AppColors.gray,
     decoration: TextDecoration.lineThrough,
   );
-    static TextStyle get gray9400 => GoogleFonts.inter(
+  static TextStyle get gray9400 => GoogleFonts.inter(
     fontSize: _sp(9),
     fontWeight: FontWeight.w400,
     color: AppColors.gray,
@@ -148,6 +163,16 @@ static TextStyle get primaryDark12400 => GoogleFonts.inter(
   static TextStyle get gray14400 => GoogleFonts.inter(
     fontSize: _sp(14),
     fontWeight: FontWeight.w400,
+    color: AppColors.gray,
+  );
+  static TextStyle get gray14500 => GoogleFonts.inter(
+    fontSize: _sp(14),
+    fontWeight: FontWeight.w500,
+    color: AppColors.gray,
+  );
+    static TextStyle get gray9500 => GoogleFonts.inter(
+    fontSize: _sp(8),
+    fontWeight: FontWeight.w500,
     color: AppColors.gray,
   );
     // white color styles

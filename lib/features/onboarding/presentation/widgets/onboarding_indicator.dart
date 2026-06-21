@@ -14,16 +14,20 @@ class OnboardingIndicator extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SmoothPageIndicator(
-      controller: controller,
-      count: count,
-      effect:  const WormEffect(
-    dotHeight: 10,
-    dotWidth: 10,
-    spacing: 8,
-    activeDotColor: AppColors.primaryDark,
-    dotColor: AppColors.unActiveIndecator,
-  ),
+    return Directionality(
+      textDirection: TextDirection.ltr,
+
+      child: SmoothPageIndicator(
+        controller: controller,
+        count: count,
+        effect: const WormEffect(
+          dotHeight: 10,
+          dotWidth: 10,
+          spacing: 8,
+          activeDotColor: AppColors.primaryDark,
+          dotColor: AppColors.unActiveIndecator,
+        ),
+      ),
     );
   }
 }

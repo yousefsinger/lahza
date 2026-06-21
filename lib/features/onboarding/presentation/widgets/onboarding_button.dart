@@ -21,7 +21,7 @@ class OnboardingButton extends StatelessWidget {
           shape: BoxShape.circle,
         ),
         child: const Icon(
-          Icons.arrow_forward,
+          Icons.arrow_back,
           color: AppColors.white,
         ),
       ),

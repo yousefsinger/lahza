@@ -1,39 +1,25 @@
 abstract final class AppAssets {
   // Logo
   static const logo = 'assets/images/logo_lahza.png';
-
+  static const logoLahza = 'assets/images/logo_lahza.svg';
   // Onboarding
-  static const onboarding1 =
-      'assets/images/onbording_1.svg';
+  static const onboarding1 = 'assets/images/onbording_1.svg';
 
-  static const onboarding2 =
-      'assets/images/onbording_2.svg';
-
-  static const onboarding3 =
-      'assets/images/onbording_3.svg';
-
-  // Auth
-  static const loginBackground =
-      'assets/images/login_bg.png';
-
-  static const otp =
-      'assets/images/otp.png';
-
-  static const success =
-      'assets/images/success.png';
-
-  // Home
-  static const homeBanner =
-      'assets/images/home_banner.png';
-
-  static const technician =
-      'assets/images/technician.png';
-
-  // Payment
-  static const payment =
-      'assets/images/payment.png';
-
-  // Map
-  static const map =
-      'assets/images/map.png';
+  static const onboarding2 = 'assets/images/onbording_2.svg';
+  static const offerPhone = 'assets/images/offer_phone.svg';
+  static const reviewRequest = 'assets/images/review_request_image.svg';
+  static const assigningCourier = 'assets/images/assigning_courier.svg';
+  static const courierImage = 'assets/images/courier_image.png';
+  static const onboarding3 = 'assets/images/onbording_3.svg';
+  static const welcomeBanner = 'assets/images/welcome_banner.png';
+  static const facebookIcon = 'assets/icons/facebook_icon.svg';
+  static const googleIcon = 'assets/icons/google_icon.svg';
+  static const twitterIcon = 'assets/icons/twitter_icon.svg';
+  static const completeIcon = 'assets/icons/complete_icon.svg';
+  static const governorateIcon = 'assets/icons/governorate_icon.svg';
+  static const vodafoneCash = 'assets/icons/vodafone_icon.svg';
+  static const etisalatCash = 'assets/icons/etisalat_cash.svg';
+  static const orangeCash = 'assets/icons/orange_cash.svg';
+  static const done = 'assets/icons/done.svg';
+  static const otpIcon = 'assets/icons/otp_icon.svg';
 }
