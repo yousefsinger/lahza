@@ -28,7 +28,7 @@ class PaymentMethodItem extends StatelessWidget {
       child: Container(
         height: 60,
         margin: EdgeInsets.only(bottom: 8.h),
-        padding: EdgeInsets.symmetric(horizontal: 12.w,),
+        padding: EdgeInsets.symmetric(horizontal: 12.w),
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(16.r),
@@ -47,8 +47,12 @@ class PaymentMethodItem extends StatelessWidget {
           textDirection: TextDirection.ltr,
 
           children: [
-            SvgPicture.asset(image, width: 30, height: 30),
-
+            SizedBox(
+              width: 40.w,
+              child: Center(
+                child: SvgPicture.asset(image, width: 30.w, height: 30.h),
+              ),
+            ),
             SizedBox(width: 8.w),
 
             Expanded(
@@ -56,14 +60,8 @@ class PaymentMethodItem extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
-                  Text(
-                    title,
-                    style: AppTextStyles.primaryDark15500
-                  ),
-                  Text(
-                    number,
-                    style: AppTextStyles.gray14400,
-                  ),
+                  Text(title, style: AppTextStyles.primaryDark15500),
+                  Text(number, style: AppTextStyles.gray14400),
                 ],
               ),
             ),

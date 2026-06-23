@@ -30,7 +30,7 @@ class LahzaApp extends StatelessWidget {
 },
         debugShowCheckedModeBanner: false,
         title: 'Lahza',
-        initialRoute: AppRoutes.mainLayout,
+        initialRoute: AppRoutes.splash,
         onGenerateRoute: AppRoutes.onGenerateRoute,
         theme: AppTheme.mainTheme,
       ),

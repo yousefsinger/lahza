@@ -1,3 +1,4 @@
+
 abstract final class AppAssets {
   // Logo
   static const logo = 'assets/images/logo_lahza.png';
@@ -10,6 +11,7 @@ abstract final class AppAssets {
   static const reviewRequest = 'assets/images/review_request_image.svg';
   static const assigningCourier = 'assets/images/assigning_courier.svg';
   static const courierImage = 'assets/images/courier_image.png';
+  static const welcomeDialog = 'assets/images/welcome_dialog.png';
   static const onboarding3 = 'assets/images/onbording_3.svg';
   static const welcomeBanner = 'assets/images/welcome_banner.png';
   static const facebookIcon = 'assets/icons/facebook_icon.svg';

@@ -40,105 +40,107 @@ class _ResetPassword extends State<ResetPassword> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const AppBarWidget(),
-      body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 16.w),
-        child: Form(
-          key: _formKey,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              SizedBox(height: 32.h),
-
-              Text(
-                AppStrings.createNewPassword,
-                style: AppTextStyles.primaryDark24600,
-              ),
-
-              SizedBox(height: 16.h),
-
-              Text(
-                AppStrings.createNewPasswordDescription,
-                style: AppTextStyles.gray16400,
-              ),
-
-              SizedBox(height: 32.h),
-
-              Text(
-                AppStrings.newPassword,
-                style: AppTextStyles.primaryDark16500,
-              ),
-
-              SizedBox(height: 12.h),
-
-              TextFormField(
-                controller: _passwordController,
-                textInputAction: TextInputAction.next,
-                autovalidateMode: AutovalidateMode.onUserInteraction,
-                obscureText: obscurePassword,
-                textAlign: TextAlign.right,
-                textDirection: TextDirection.rtl,
-                validator: AppValidations.validatePassword,
-                decoration: InputDecoration(
-                  hintText: AppStrings.newPasswordHint,
-                  suffixIcon: IconButton(
-                    onPressed: () {
-                      setState(() {
-                        obscurePassword = !obscurePassword;
-                      });
-                    },
-                    icon: Icon(
-                      obscurePassword
-                          ? Icons.visibility_off_outlined
-                          : Icons.visibility_outlined,
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 16.w),
+          child: Form(
+            key: _formKey,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                SizedBox(height: 32.h),
+        
+                Text(
+                  AppStrings.createNewPassword,
+                  style: AppTextStyles.primaryDark24600,
+                ),
+        
+                SizedBox(height: 16.h),
+        
+                Text(
+                  AppStrings.createNewPasswordDescription,
+                  style: AppTextStyles.gray16400,
+                ),
+        
+                SizedBox(height: 32.h),
+        
+                Text(
+                  AppStrings.newPassword,
+                  style: AppTextStyles.primaryDark16500,
+                ),
+        
+                SizedBox(height: 12.h),
+        
+                TextFormField(
+                  controller: _passwordController,
+                  textInputAction: TextInputAction.next,
+                  autovalidateMode: AutovalidateMode.onUserInteraction,
+                  obscureText: obscurePassword,
+                  textAlign: TextAlign.right,
+                  textDirection: TextDirection.rtl,
+                  validator: AppValidations.validatePassword,
+                  decoration: InputDecoration(
+                    hintText: AppStrings.newPasswordHint,
+                    suffixIcon: IconButton(
+                      onPressed: () {
+                        setState(() {
+                          obscurePassword = !obscurePassword;
+                        });
+                      },
+                      icon: Icon(
+                        obscurePassword
+                            ? Icons.visibility_off_outlined
+                            : Icons.visibility_outlined,
+                      ),
                     ),
                   ),
                 ),
-              ),
-
-              SizedBox(height: 16.h),
-
-              Text(
-                AppStrings.confirmPasswordHint,
-                style: AppTextStyles.primaryDark16500,
-              ),
-
-              SizedBox(height: 12.h),
-
-              TextFormField(
-                controller: _confirmPasswordController,
-                textInputAction: TextInputAction.done,
-                autovalidateMode: AutovalidateMode.onUserInteraction,
-                obscureText: obscureConfirmPassword,
-                textAlign: TextAlign.right,
-                textDirection: TextDirection.rtl,
-                validator: (value) => AppValidations.validateConfirmPassword(
-                  value,
-                  _confirmPasswordController.text,
+        
+                SizedBox(height: 16.h),
+        
+                Text(
+                  AppStrings.confirmPasswordHint,
+                  style: AppTextStyles.primaryDark16500,
                 ),
-                decoration: InputDecoration(
-                  hintText: AppStrings.confirmPasswordHint,
-                  suffixIcon: IconButton(
-                    onPressed: () {
-                      setState(() {
-                        obscureConfirmPassword = !obscureConfirmPassword;
-                      });
-                    },
-                    icon: Icon(
-                      obscureConfirmPassword
-                          ? Icons.visibility_off_outlined
-                          : Icons.visibility_outlined,
+        
+                SizedBox(height: 12.h),
+        
+                TextFormField(
+                  controller: _confirmPasswordController,
+                  textInputAction: TextInputAction.done,
+                  autovalidateMode: AutovalidateMode.onUserInteraction,
+                  obscureText: obscureConfirmPassword,
+                  textAlign: TextAlign.right,
+                  textDirection: TextDirection.rtl,
+                  validator: (value) => AppValidations.validateConfirmPassword(
+                    value,
+                    _confirmPasswordController.text,
+                  ),
+                  decoration: InputDecoration(
+                    hintText: AppStrings.confirmPasswordHint,
+                    suffixIcon: IconButton(
+                      onPressed: () {
+                        setState(() {
+                          obscureConfirmPassword = !obscureConfirmPassword;
+                        });
+                      },
+                      icon: Icon(
+                        obscureConfirmPassword
+                            ? Icons.visibility_off_outlined
+                            : Icons.visibility_outlined,
+                      ),
                     ),
                   ),
                 ),
-              ),
-
-              SizedBox(height: 200.h),
-
-              ElevatedButton(
-                onPressed: resetPassword,
-                child: const Text(AppStrings.resetPassword),
-              ),
-            ],
+        
+                SizedBox(height: 200.h),
+        
+                ElevatedButton(
+                  onPressed: resetPassword,
+                  child: const Text(AppStrings.resetPassword),
+                ),
+              ],
+            ),
           ),
         ),
       ),

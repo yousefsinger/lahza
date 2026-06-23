@@ -81,51 +81,56 @@ class _OtpPageState extends State<OtpPage> {
 
       appBar: const AppBarWidget(),
 
-      body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 24.w),
-
-        child: Column(
-          children: [
-            const OtpHeader(),
-
-            SizedBox(height: 32.h),
-
-            Pinput(
-              length: 4,
-              controller: pinController,
-              focusNode: focusNode,
-              defaultPinTheme: pinTheme,
-              focusedPinTheme: pinTheme,
-              submittedPinTheme: pinTheme,
-              mainAxisAlignment: MainAxisAlignment.center,
-
-              onChanged: (_) {
-                setState(() {});
-              },
-
-              onCompleted: (pin) {
-                debugPrint(pin);
-              },
-            ),
-
-            SizedBox(height: 48.h),
-            ElevatedButton(
-              onPressed: pinController.text.length == 4
-                  ? () {
-                      Navigator.pushNamed(context, AppRoutes.createNewPassword);
-                    }
-                  : null,
-              child: const Text(AppStrings.verify),
-            ),
-
-            SizedBox(height: 32.h),
-
-            OtpTimer(
-              time: TimeFormatter.formatSeconds(_startSeconds),
-              canResend: _canResend,
-              onResend: _startTimer,
-            ),
-          ],
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 24.w),
+        
+          child: Column(
+            children: [
+              const OtpHeader(),
+        
+              SizedBox(height: 32.h),
+        
+              Directionality(
+                textDirection: TextDirection.ltr,
+                child: Pinput(
+                  length: 4,
+                  controller: pinController,
+                  focusNode: focusNode,
+                  defaultPinTheme: pinTheme,
+                  focusedPinTheme: pinTheme,
+                  submittedPinTheme: pinTheme,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                        
+                  onChanged: (_) {
+                    setState(() {});
+                  },
+                        
+                  onCompleted: (pin) {
+                    debugPrint(pin);
+                  },
+                ),
+              ),
+        
+              SizedBox(height: 48.h),
+              ElevatedButton(
+                onPressed: pinController.text.length == 4
+                    ? () {
+                        Navigator.pushNamed(context, AppRoutes.createNewPassword);
+                      }
+                    : null,
+                child: const Text(AppStrings.verify),
+              ),
+        
+              SizedBox(height: 32.h),
+        
+              OtpTimer(
+                time: TimeFormatter.formatSeconds(_startSeconds),
+                canResend: _canResend,
+                onResend: _startTimer,
+              ),
+            ],
+          ),
         ),
       ),
     );

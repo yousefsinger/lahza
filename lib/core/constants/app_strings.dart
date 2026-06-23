@@ -145,6 +145,7 @@ abstract final class AppStrings {
   static const exclusiveOffersDesc = 'خصومات تصل حتى 30% 🔥';
 
   static const shopNow = 'تسوق الآن';
+  static const exploreServices = 'استكشف خدماتنا';
   // Orders
   static const orderTitle = ' أختيار نوع العطل';
   static const orderDescription = 'اختر نوع العطل الذي تواجهه في جهازك';

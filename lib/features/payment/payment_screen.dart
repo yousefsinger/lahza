@@ -124,10 +124,10 @@ class _PaymentScreenState extends State<PaymentScreen> {
             SizedBox(height: 12.h),
 
             UploadImageWidget(
-            
               onTap: () {
                 /// Pick Image
-              }, title: AppStrings.sendImageReceipt,
+              },
+              title: AppStrings.sendImageReceipt,
             ),
 
             SizedBox(height: 16.h),
@@ -155,7 +155,11 @@ class _PaymentScreenState extends State<PaymentScreen> {
 
             ElevatedButton(
               onPressed: () {
-                Navigator.pushNamed(context, AppRoutes.mainLayout);
+                Navigator.pushNamedAndRemoveUntil(
+                  context,
+                  AppRoutes.mainLayout,
+                  (route) => false,
+                );
               },
               child: Text(AppStrings.payNow, style: AppTextStyles.white16500),
             ),

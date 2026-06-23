@@ -7,6 +7,7 @@ import 'package:lahza/core/widgets/app_bar_widget.dart';
 import 'package:lahza/features/main_layout/home/offer_banner.dart';
 import 'package:lahza/features/main_layout/home/service_card.dart';
 import 'package:lahza/features/main_layout/home/welcome_banner.dart';
+import 'package:lahza/features/main_layout/home/welcome_dialog.dart';
 
 void onServiceTap(BuildContext context, int index) {
   switch (index) {
@@ -27,13 +28,34 @@ void onServiceTap(BuildContext context, int index) {
   }
 }
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  @override
+  void initState() {
+    super.initState();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      showDialog(
+        context: context,
+        barrierDismissible: false,
+        builder: (_) => const WelcomeDialog(),
+      );
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBarWidget(title: AppStrings.appName,icon: Icons.notifications_sharp,),
+      appBar: AppBarWidget(
+        title: AppStrings.appName,
+        icon: Icons.notifications_sharp,
+      ),
       body: SingleChildScrollView(
         padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
         child: Column(

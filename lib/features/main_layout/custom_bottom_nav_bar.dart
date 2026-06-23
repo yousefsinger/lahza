@@ -16,8 +16,8 @@ class CustomBottomNavBar extends StatelessWidget {
 
   static const items = [
     (icon: Icons.home_rounded, label: 'الرئيسية'),
-    (icon: Icons.notifications_rounded, label: 'الإشعارات'),
     (icon: Icons.person_rounded, label: 'حسابي'),
+    (icon: Icons.notifications_rounded, label: 'الإشعارات'),
   ];
 
   @override

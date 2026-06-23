@@ -24,43 +24,45 @@ class _ForgetPasswordState extends State<ForgetPassword> {
       appBar: AppBarWidget(),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 16.w),
-        child: Form(
-          key: _formKey,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                AppStrings.resetPassword,
-                style: AppTextStyles.primaryDark24500,
-              ),
-              SizedBox(height: 32.h),
-              Text(AppStrings.phoneNumber, style: AppTextStyles.primaryDark16500),
-              SizedBox(height: 16.h),
-          
-              TextFormField(
-                textInputAction: TextInputAction.next,
-                autovalidateMode: AutovalidateMode.onUserInteraction,
-                textAlign: TextAlign.right,
-                textDirection: TextDirection.rtl,
-                controller: _phoneController,
-                keyboardType: TextInputType.phone,
-                validator: AppValidations.validatePhoneNumber,
-                decoration: const InputDecoration(
-                  hintText: AppStrings.phoneNumberHint,
+        child: SingleChildScrollView(
+          child: Form(
+            key: _formKey,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  AppStrings.resetPassword,
+                  style: AppTextStyles.primaryDark24500,
                 ),
-              ),
-              SizedBox(height: 400.h),
-          
-              ElevatedButton(
-                onPressed: () {
-                  if (_formKey.currentState!.validate()) {
-                            Navigator.pushNamed(
-                              context,
-                              AppRoutes.otpPage,
-                            );
-                          }
-                }, child: Text(AppStrings.sendCode)),
-            ],
+                SizedBox(height: 32.h),
+                Text(AppStrings.phoneNumber, style: AppTextStyles.primaryDark16500),
+                SizedBox(height: 16.h),
+            
+                TextFormField(
+                  textInputAction: TextInputAction.next,
+                  autovalidateMode: AutovalidateMode.onUserInteraction,
+                  textAlign: TextAlign.right,
+                  textDirection: TextDirection.rtl,
+                  controller: _phoneController,
+                  keyboardType: TextInputType.phone,
+                  validator: AppValidations.validatePhoneNumber,
+                  decoration: const InputDecoration(
+                    hintText: AppStrings.phoneNumberHint,
+                  ),
+                ),
+                SizedBox(height: 400.h),
+            
+                ElevatedButton(
+                  onPressed: () {
+                    if (_formKey.currentState!.validate()) {
+                              Navigator.pushNamed(
+                                context,
+                                AppRoutes.otpPage,
+                              );
+                            }
+                  }, child: Text(AppStrings.sendCode)),
+              ],
+            ),
           ),
         ),
       ),
